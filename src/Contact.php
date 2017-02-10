@@ -4,6 +4,7 @@ class Contact
     private $name;
     private $phone_number;
     private $address;
+    public $create_was_clicked;
 
     function __construct($name_input, $phone_number_input, $address_input)
     {
