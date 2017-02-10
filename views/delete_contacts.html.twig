@@ -8,6 +8,62 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
+    <div class="container">
+      <div class="jumbotron green">
+        <h1>Address Book</h1>
+        <p>Welcome to your new address book.</p>
+        <p>Easily store and retrieve you addresses and stay on the up and up.</p>
+      </div>
+      <!-- jumbotron -->
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="jumbotron blue">
+            <h4>Create New Contact</h4>
+            <form action="/create-contact" method="post">
+              <div class="form-group">
+                <label for="name_input">Name: </label>
+                <input class="form-control" type="text" name="name_input">
+                <label for="phone_number_input">Phone Number: </label>
+                <input class="form-control" type="text" name="phone_number_input">
+                <label for="address_input">Address: </label>
+                <input class="form-control" type="text" name="address_input">
+              </div>
+              <!-- formgroup -->
+              <button class="btn btn-primary" type="submit" name="new_contact_submit">create new contact</button>
+            </form>
+            <form class="" action="/" method="post">
+                <button type="submit" name="view_contacts" class="btn btn-warning" value="view">view contacts</button>
+            </form>
+          </div>
+          <!-- jumbotron blue -->
+        </div>
+        <!-- right column form -->
+        <div class="col-sm-6">
+          <div class="jumbotron red">
+            <h3>You have deleted your contacts.</h3>
+                <p>Click on "create new contact" to populate your address book.</p>
+          </div>
+          <!-- jumbotron purple -->
+        </div>
+        <!-- column -->
+      </div>
+      <!-- row -->
+      <nav id="bottom-nav" class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="https://github.com/elmunoz42"><i class="fa fa-git" aria-hidden="true"></i>Carlos Munoz Kampff</a>
+              </li>
+            </ul>
+          </div>
+        </div>  <!-- /.navbar-collapse -->
+      </nav>
+      <!-- nav-bar -->
+    </div>
+    <!-- container -->
+
+
+<!-- /////////////
     <h1>You have deleted your contacts.</h1>
 
     <form class="" action="/" method="post">
@@ -15,6 +71,6 @@
     </form>
     <form class="" action="/create-contact" method="get">
         <button type="submit" style="btn btn-primary" name="create_contact" value="view">create new contact</button>
-    </form>
+    </form> -->
   </body>
 </html>

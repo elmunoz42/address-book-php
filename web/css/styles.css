@@ -1,6 +1,18 @@
 #new-contact-form {
     /*display: none;*/
 }
+body {
+  background-color: green;
+}
+.jumbotron {
+  background-color: lightgreen;
+}
+.container {
+  margin-top: 20px;
+}
+.red {
+  background-color: salmon;
+}
 button {
   margin-top: 10px;
 }

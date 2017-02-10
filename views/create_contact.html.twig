@@ -11,7 +11,8 @@
     <div class="container">
       <div class="jumbotron green">
         <h1>Address Book</h1>
-        <p>Welcome to our address book. Here you can store and retrieve you addresses and stay on the up and up.</p>
+        <p>Welcome to your new address book.</p>
+        <p>Easily store and retrieve you addresses and stay on the up and up.</p>
       </div>
       <!-- jumbotron -->
       <div class="row">
@@ -38,10 +39,10 @@
                 <button type="submit" name="new_contact_submit">Submit</button>
               </form> -->
               <!-- formgroup -->
-              <button class="btn btn-primary" type="submit" name="new_contact_submit">create new contact</button>
+              <button class="btn btn-primary" type="submit" name="new_contact_submit">create another contact</button>
             </form>
             <form class="" action="/" method="post">
-                <button type="submit" name="view_contacts" class="btn btn-warning" value="view">view contacts</button>
+                <button type="submit" name="view_contacts" class="btn btn-warning" value="view">view all contacts</button>
             </form>
             <form class="" action="/delete-contacts" method="post">
                 <button type="submit" class="btn btn-danger" name="delete_contacts">delete contacts</button>
@@ -52,7 +53,7 @@
         <!-- right column form -->
         <div class="col-sm-6">
           <div class="jumbotron purple">
-            <h1>Here is your new contact:</h1>
+            <h3>Here is your new contact:</h3>
               <ul>
                 <p>{{ list_of_contacts[(list_of_contacts|length)-1].getName }}</p>
                 <li>phone number: {{ list_of_contacts[(list_of_contacts|length)-1].getPhoneNumber }}</li>
