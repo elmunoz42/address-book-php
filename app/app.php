@@ -18,20 +18,36 @@
     ));
 
     $app->get("/", function() use($app) {
-          Contact::deleteAll();
-          $sample_contact= new Contact("Carlos Munoz Kampff","510-859-8763", "Boones Ferry Road, PDX");
-          $sample_contact->save();
-          return $app['twig']->render('address_book_home.html.twig', array( 'list_of_contacts'=>Contact::getAll() ));
+
+        return $app['twig']->render('address_book_home.html.twig', array( 'list_of_contacts'=>Contact::getAll() ));
+
+    });
+
+    //Redirect for view contacts button
+    $app->post("/", function() use($app) {
+
+        $sample_contact= new Contact("Carlos Munoz Kampff","510-859-8763", "Boones Ferry Road, PDX");
+        $sample_contact->save();
+        return $app->redirect('/');
 
     });
     $app->post("/create-contact", function() use($app) {
 
-          return $app['twig']->render('create_contact.html.twig');
+        return $app['twig']->render('create_contact.html.twig');
+
+    });
+
+    //Redirect for create new contact form submit
+    $app->post("/create-contact", function() use($app) {
+
+        $new_contact= new Contact("Carlos Munoz Kampff","510-859-8763", "Boones Ferry Road, PDX");
+        $new_contact->save();
+        return $app->redirect('/create-contact');
 
     });
     $app->post("/delete-contacts", function() use($app) {
 
-          return $app['twig']->render('delete_contacts.html.twig');
+        return $app['twig']->render('delete_contacts.html.twig');
 
     });
     return $app;

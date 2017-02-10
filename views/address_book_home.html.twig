@@ -8,22 +8,26 @@
     <p>Welcome to our address book. Here you can store and retrieve you addresses and stay on the up and up.</p>
 
 
-    {% if list_of_contacts is not empty %}
+    {% if list_of_contacts is empty %}
+        <p>You have no stored addresses. Click on "create new contact" to populate your address book.</p>
+    {% else %}
         <p>Here are all your current contacts:</p>
-        <ul>
-            {% for contact_instance in list_of_contacts %}
-                <li>{{ contact_instance.getName }}</li>
-                <li>{{ contact_instance.getPhoneNumber }}</li>
-                <li>{{ contact_instance.getAddress }}</li>
+        {% for contact_instance in list_of_contacts %}
+          <ul>
+            <p>{{ contact_instance.getName }}</p>
+            <li>phone number: {{ contact_instance.getPhoneNumber }}</li>
+            <li>address: {{ contact_instance.getAddress }}</li>
             {% endfor %}
-        </ul>
+          </ul>
     {% endif %}
     <form class="" action="/" method="post">
         <button type="submit" name="view_contacts" value="view">view contacts</button>
     </form>
-
+    <form class="" action="/" method="post">
+        <button type="submit" name="create_contact" value="view">create new contact</button>
+    </form>
     <form class="" action="/delete-contacts" method="post">
-        <button type="submit" name="view_contacts">delete contacts</button>
+        <button type="submit" name="delete_contacts">delete contacts</button>
     </form>
   </body>
 </html>
