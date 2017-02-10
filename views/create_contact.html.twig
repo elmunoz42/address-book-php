@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create New Contact</title>
+  </head>
+  <body>
+    <h1>Create New Contact</h1>
+    <form class="" action="/create-contact" method="post">
+      <label for="name_input">Name: </label>
+      <input type="text" name="name_input" value="testName">
+      <label for="phone_number_input">Name: </label>
+      <input type="text" name="phone_number_input" value="555555555">
+      <label for="address_input">Name: </label>
+      <input type="text" name="address_input" value="500 Bogus Street, PDX">
+      <button type="submit" name="new_contact_submit">Submit</button>
+    </form>
+    {% if (list_of_contacts|length) > 1 %}
+    <p>Here is your new contact:</p>
+      <ul>
+        <p>{{ list_of_contacts[(list_of_contacts|length)-1].getName }}</p>
+        <li>phone number: {{ list_of_contacts[(list_of_contacts|length)-1].getPhoneNumber }}</li>
+        <li>address: {{ list_of_contacts[(list_of_contacts|length)-1].getAddress }}</li>
+      </ul>
+    {% endif %}
+    <form class="" action="/" method="post">
+        <button type="submit" name="view_contacts" value="view">view contacts</button>
+    </form>
+    <form class="" action="/delete-contacts" method="post">
+        <button type="submit" name="delete_contacts">delete contacts</button>
+    </form>
+  </body>
+</html>

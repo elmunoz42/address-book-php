@@ -17,13 +17,15 @@
         'twig.path' => __DIR__.'/../views'
     ));
 
+    // NOTE root page
     $app->get("/", function() use($app) {
 
+        Contact::deleteAll();
         return $app['twig']->render('address_book_home.html.twig', array( 'list_of_contacts'=>Contact::getAll() ));
 
     });
 
-    //Redirect for view contacts button
+    // NOTE Redirect for view contacts button
     $app->post("/", function() use($app) {
 
         $sample_contact= new Contact("Carlos Munoz Kampff","510-859-8763", "Boones Ferry Road, PDX");
@@ -31,20 +33,24 @@
         return $app->redirect('/');
 
     });
-    $app->post("/create-contact", function() use($app) {
 
-        return $app['twig']->render('create_contact.html.twig');
+    // NOTE from home page 'create new contact' button
+    $app->get("/create-contact", function() use($app) {
+
+        return $app['twig']->render('create_contact.html.twig', array( 'list_of_contacts'=>Contact::getAll() ));
 
     });
 
-    //Redirect for create new contact form submit
+    // NOTE Redirect for create new contact form submit
     $app->post("/create-contact", function() use($app) {
 
-        $new_contact= new Contact("Carlos Munoz Kampff","510-859-8763", "Boones Ferry Road, PDX");
+        $new_contact= new Contact($_POST['name_input'], $_POST['phone_number_input'], $_POST['address_input']);
         $new_contact->save();
         return $app->redirect('/create-contact');
 
     });
+
+    // NOTE from home page 'delete contacts' button
     $app->post("/delete-contacts", function() use($app) {
 
         return $app['twig']->render('delete_contacts.html.twig');
