@@ -13,16 +13,17 @@ _This address book app will allow user to use forms to create a new address file
 
 | Behavior                                              |   Input example   |  Output example |
 |-------------------------------------------------------|:-----------------:|:---------------:|
-|1)User can view stored addresses.| Click on view addresses button. | See the stored addresses. |
+|1)User can view stored addresses.| Click: "view contacts" button. | Stored addresses. |
 |2)User can create a new address and view it on the page. | Click on the "create new contact" button. Fill out form | View that contact on the page. |
 3)User can retrieve that new address while browsing other previously existing contacts.| Click on the "create new contact" button. Fill out form. Press "view contacts" button. | View the new contact along with previous contacts on the page.|
 
+## Wish-list Specifications:
 
-
-
-
-
-
+| Behavior                                              |   Input example   |  Output example |
+|-------------------------------------------------------|:-----------------:|:---------------:|
+|1) User can use search engine for finding contacts.| type: "Ben" click: "search" | Benjamin Seaver, Ben Braden |
+|2) User can view names of contacts  alphabetically.| click: "view contacts" button
+| names of contacts in alphabetical order. |
 
 ## Setup/Installation Requirements
 
