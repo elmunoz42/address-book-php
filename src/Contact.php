@@ -8,8 +8,8 @@ class Contact
     function __construct($name_input, $phone_number_input, $address_input)
     {
         $this->name = $name_input;
-        $this->$phone_number = $phone_number_input;
-        $this->$address = $address_input;
+        $this->phone_number = $phone_number_input;
+        $this->address = $address_input;
     }
     function setName($new_name)
     {
@@ -33,7 +33,7 @@ class Contact
     }
     function getAddress()
     {
-        return $this->$address;
+        return $this->address;
     }
     function save()
     {

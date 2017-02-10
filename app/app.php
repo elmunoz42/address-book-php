@@ -11,12 +11,16 @@
 
     $app = new Silex\Application();
 
+    $app['debug'] = true;
+
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/../views'
     ));
 
     $app->get("/", function() use($app) {
-
+          Contact::deleteAll();
+          $sample_contact= new Contact("Carlos Munoz Kampff","510-859-8763", "Boones Ferry Road, PDX");
+          $sample_contact->save();
           return $app['twig']->render('address_book_home.html.twig', array( 'list_of_contacts'=>Contact::getAll() ));
 
     });

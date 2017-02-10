@@ -5,9 +5,25 @@
   </head>
   <body>
     <h1>Address Book</h1>
-    <p>Welcome to our address book. Here you can store and retrieve you addresses and simplify your life.</p>
+    <p>Welcome to our address book. Here you can store and retrieve you addresses and stay on the up and up.</p>
+
+
+    {% if list_of_contacts is not empty %}
+        <p>Here are all your current contacts:</p>
+        <ul>
+            {% for contact_instance in list_of_contacts %}
+                <li>{{ contact_instance.getName }}</li>
+                <li>{{ contact_instance.getPhoneNumber }}</li>
+                <li>{{ contact_instance.getAddress }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <form class="" action="/" method="post">
-        <button type="submit" name="view_contacts">view contacts</button>  
+        <button type="submit" name="view_contacts" value="view">view contacts</button>
+    </form>
+
+    <form class="" action="/delete-contacts" method="post">
+        <button type="submit" name="view_contacts">delete contacts</button>
     </form>
   </body>
 </html>
