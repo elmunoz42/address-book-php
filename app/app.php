@@ -36,11 +36,8 @@
     $app->post("/search_input", function() use($app) {
 
         $all_contacts = Contact::getAll();
-        // $search_input = (string) ('/'.$_POST['search_input'].'.'.$_POST['search_input'].'/');
         $search_input = strtoupper($_POST['search_input']);
         $search_input_array = str_split($search_input);
-        // $search_input = "Ben";preg_match("/P.P/",     "PHP")
-        // $_POST['search_input']
         $tempArr = array();
         foreach($all_contacts as $contact)
         {

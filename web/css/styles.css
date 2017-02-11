@@ -1,8 +1,12 @@
-#new-contact-form {
-    /*display: none;*/
-}
+
 body {
   background-color: green;
+}
+button {
+  margin-top: 10px;
+}
+bottom-nav {
+  background-color: navy;
 }
 .jumbotron {
   background-color: lightgreen;
@@ -12,10 +16,4 @@ body {
 }
 .red {
   background-color: salmon;
-}
-button {
-  margin-top: 10px;
-}
-bottom-nav {
-  background-color: navy;
 }

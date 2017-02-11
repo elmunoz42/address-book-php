@@ -6,7 +6,7 @@
 
 ## Description
 
-_This address book app will allow user to use forms to create a new address file. It will also allow those saved addresses to be viewed for further reference._
+_This address book app will allow user to use forms to create a new address file. It will also allow those saved addresses to be viewed for further reference and searched by first letter._
 
 
 ## Specifications
@@ -25,7 +25,7 @@ address: Boones Ferry Road, PDX |
 ## Setup/Installation Requirements
 
 
-* _Clone repository from github._
+* _Clone repository from github. https://github.com/elmunoz42/address-book-php_
 * _Initiate a php server in terminal within the project directory._
 * _In Terminal run: Install composer_
 * _Open localhost:8000_
