@@ -19,15 +19,8 @@ address: Boones Ferry Road, PDX |
 |3)User can create a new address and view it on the page. | Click on the "create new contact" button. Fill out form press "submit".| Jenny Leis, 555-555-5555, Boones Ferry Road, PDX |
 4)User can retrieve that new address while browsing other previously existing contacts.| Click on the "create new contact" button. Fill out form. Press "view contacts" button. | View the new contact along with previous contacts on the page.|
 5)User can delete all contacts. | Click on "delete all" button. | View empty list. |
+|6) User can search by first initial of the name to find contacts.| type: "B" click: "search" | Benjamin Seaver, Ben Braden, Bob Connor |
 
-## Wish-list Specifications:
-
-| Behavior                                              |   Input example   |  Output example |
-|-------------------------------------------------------|:-----------------:|:---------------:|
-|1) User can delete a specific contact.| Click on "delete this contact" button. | See the new reduced contact list.|
-|2) User can search by initial to find contacts.| type: "B" click: "search" | Benjamin Seaver, Ben Braden, Bob Connor |
-|2) User can use search engine for finding contacts.| type: "Ben" click: "search" | Benjamin Seaver, Ben Braden |
-|3) User can view names of contacts  alphabetically.| click: "view contacts" button.| names of contacts in alphabetical order. |
 
 ## Setup/Installation Requirements
 

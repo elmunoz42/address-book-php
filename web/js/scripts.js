@@ -1,4 +1,1 @@
-// $("form#create-contact-button").click(function(event){
-//   event.preventDefault();
-//   $("#new-contact-form").show();
-// }
+// scripts is empty could not get jquery to show/hide ???

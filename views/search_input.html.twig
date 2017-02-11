@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Delete Contacts Confirmation</title>
+    <title>Address Book</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.1.1.js"></script>
@@ -31,17 +31,38 @@
               <!-- formgroup -->
               <button class="btn btn-primary" type="submit" name="new_contact_submit">create new contact</button>
             </form>
+            <form class="" action="/search_input" method="post">
+              <div class="form-group">
+                <label for="search_input"></label>
+                <input class="form-control" type="text" name="search_input" placeholder="first letter search...">
+              </div>
+              <button type="submit" name="view_contacts" class="btn btn-info" value="view">search contacts</button>
+            </form>
             <form class="" action="/" method="post">
-                <button type="submit" name="view_contacts" class="btn btn-warning" value="view">view contacts</button>
+              <button type="submit" name="view_contacts" class="btn btn-warning" value="view">view contacts</button>
+            </form>
+            <form class="" action="/delete-contacts" method="post">
+                <button type="submit" class="btn btn-danger" name="delete_contacts">delete contacts</button>
             </form>
           </div>
           <!-- jumbotron blue -->
         </div>
         <!-- right column form -->
         <div class="col-sm-6">
-          <div class="jumbotron red">
-            <h3>You have deleted your contacts.</h3>
-                <p>Click on "create new contact" to populate your address book.</p>
+          <div class="jumbotron purple">
+            {% if tempArr is empty %}
+                <p>You have no matching contacts. Try a simpler search.</p>
+            {% else %}
+                <p>Here are all your current contacts:</p>
+
+                {% for contact_instance in tempArr %}
+                  <ul>
+                    <p>{{ contact_instance.getName }}</p>
+                    <li>phone number: {{ contact_instance.getPhoneNumber }}</li>
+                    <li>address: {{ contact_instance.getAddress }}</li>
+                  </ul>
+                    {% endfor %}
+            {% endif %}
           </div>
           <!-- jumbotron purple -->
         </div>

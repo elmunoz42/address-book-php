@@ -31,8 +31,15 @@
               <!-- formgroup -->
               <button class="btn btn-primary" type="submit" name="new_contact_submit">create new contact</button>
             </form>
+            <form class="" action="/search_input" method="post">
+              <div class="form-group">
+                <label for="search_input"></label>
+                <input class="form-control" type="text" name="search_input" placeholder="first letter search...">
+              </div>
+              <button type="submit" name="view_contacts" class="btn btn-info" value="view">search contacts</button>
+            </form>
             <form class="" action="/" method="post">
-                <button type="submit" name="view_contacts" class="btn btn-warning" value="view">view contacts</button>
+              <button type="submit" name="view_contacts" class="btn btn-warning" value="view">view contacts</button>
             </form>
             <form class="" action="/delete-contacts" method="post">
                 <button type="submit" class="btn btn-danger" name="delete_contacts">delete contacts</button>

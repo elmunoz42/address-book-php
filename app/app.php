@@ -32,6 +32,30 @@
 
     });
 
+    // search_input button
+    $app->post("/search_input", function() use($app) {
+
+        $all_contacts = Contact::getAll();
+        // $search_input = (string) ('/'.$_POST['search_input'].'.'.$_POST['search_input'].'/');
+        $search_input = strtoupper($_POST['search_input']);
+        $search_input_array = str_split($search_input);
+        // $search_input = "Ben";preg_match("/P.P/",     "PHP")
+        // $_POST['search_input']
+        $tempArr = array();
+        foreach($all_contacts as $contact)
+        {
+            $current_contact_name = strtoupper($contact->getName());
+            $current_contact_name_array = str_split($current_contact_name);
+            $first_letter = $current_contact_name_array[0];
+            if($first_letter==$search_input_array[0])
+            {
+                array_push($tempArr, $contact);
+            }
+        }
+        return $app['twig']->render('search_input.html.twig', array('tempArr' => $tempArr));
+
+    });
+
     // NOTE from home page 'create new contact' button
     $app->post("/create-contact", function() use($app) {
 
